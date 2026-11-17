@@ -1,0 +1,13 @@
+take_dose:
+skip_dose:
+set_feeling:
+  fields:
+    value:
+      required: true
+      example: 4
+      selector:
+        number:
+          min: 1
+          max: 5
+          mode: box
+refill_ordered:

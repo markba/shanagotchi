@@ -1,0 +1,24 @@
+{
+  "entity": {
+    "binary_sensor": {
+      "dose_due": { "default": "mdi:pill" },
+      "checkin_pending": { "default": "mdi:heart-pulse" },
+      "refill_due": { "default": "mdi:medical-bag" }
+    },
+    "sensor": {
+      "mood": { "default": "mdi:emoticon-outline" },
+      "dose_status": { "default": "mdi:pill" },
+      "feeling": { "default": "mdi:heart-pulse" },
+      "doses_taken_today": { "default": "mdi:check" },
+      "doses_missed_today": { "default": "mdi:close" },
+      "streak": { "default": "mdi:star" },
+      "next_bin_collection": { "default": "mdi:delete" }
+    }
+  },
+  "services": {
+    "take_dose": { "service": "mdi:pill" },
+    "skip_dose": { "service": "mdi:debug-step-over" },
+    "set_feeling": { "service": "mdi:heart-pulse" },
+    "refill_ordered": { "service": "mdi:medical-bag" }
+  }
+}

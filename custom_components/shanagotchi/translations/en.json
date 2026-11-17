@@ -1,0 +1,127 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up Shanagotchi",
+        "data": {
+          "doses_per_day": "Doses per day",
+          "dose_1_time": "Dose 1 time",
+          "dose_2_time": "Dose 2 time",
+          "dose_3_time": "Dose 3 time",
+          "dose_window_min": "Dose window",
+          "early_window_min": "Early window",
+          "repeat_min": "Reminder repeat",
+          "max_repeats": "Max repeat reminders",
+          "checkin_time": "Check-in time",
+          "sleep_start": "Sleep start",
+          "sleep_end": "Sleep end",
+          "notify_service": "Phone notify service",
+          "bin_calendar": "Bin collection calendar",
+          "refill_name": "Refill name",
+          "refill_interval_days": "Refill interval"
+        },
+        "data_description": {
+          "dose_2_time": "Used when doses per day is 2 or more.",
+          "dose_3_time": "Used when doses per day is 3.",
+          "dose_window_min": "How long a dose stays due before it counts as missed.",
+          "early_window_min": "Marking a dose taken this long before its time counts for that dose.",
+          "notify_service": "A Companion app service such as notify.mobile_app_my_phone. Leave empty for no push notifications.",
+          "bin_calendar": "The Waste Collection Schedule calendar, or any calendar with one event per bin. Leave empty to hide bin night.",
+          "refill_name": "What to reorder. Leave empty for no refill reminders."
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Shanagotchi is already set up."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "doses_per_day": "Doses per day",
+          "dose_1_time": "Dose 1 time",
+          "dose_2_time": "Dose 2 time",
+          "dose_3_time": "Dose 3 time",
+          "dose_window_min": "Dose window",
+          "early_window_min": "Early window",
+          "repeat_min": "Reminder repeat",
+          "max_repeats": "Max repeat reminders",
+          "checkin_time": "Check-in time",
+          "sleep_start": "Sleep start",
+          "sleep_end": "Sleep end",
+          "notify_service": "Phone notify service",
+          "bin_calendar": "Bin collection calendar",
+          "refill_name": "Refill name",
+          "refill_interval_days": "Refill interval"
+        },
+        "data_description": {
+          "dose_2_time": "Used when doses per day is 2 or more.",
+          "dose_3_time": "Used when doses per day is 3.",
+          "dose_window_min": "How long a dose stays due before it counts as missed.",
+          "early_window_min": "Marking a dose taken this long before its time counts for that dose.",
+          "notify_service": "A Companion app service such as notify.mobile_app_my_phone. Leave empty for no push notifications.",
+          "bin_calendar": "The Waste Collection Schedule calendar, or any calendar with one event per bin. Leave empty to hide bin night.",
+          "refill_name": "What to reorder. Leave empty for no refill reminders."
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "dose_due": { "name": "Dose due" },
+      "checkin_pending": { "name": "Check-in pending" },
+      "refill_due": { "name": "Refill due" }
+    },
+    "sensor": {
+      "mood": {
+        "name": "Mood",
+        "state": {
+          "hungry": "Hungry",
+          "sleep": "Asleep",
+          "ask": "Asking",
+          "sad": "Sad",
+          "low": "Low",
+          "okay": "Okay",
+          "happy": "Happy",
+          "proud": "Proud"
+        }
+      },
+      "dose_status": {
+        "name": "Dose status",
+        "state": {
+          "waiting": "Waiting",
+          "due": "Due",
+          "taken": "Taken",
+          "skipped": "Skipped"
+        }
+      },
+      "feeling": { "name": "Feeling" },
+      "doses_taken_today": { "name": "Doses taken today" },
+      "doses_missed_today": { "name": "Doses missed today" },
+      "streak": { "name": "Days without a missed dose" },
+      "next_bin_collection": { "name": "Next bin collection" }
+    }
+  },
+  "services": {
+    "take_dose": {
+      "name": "Take dose",
+      "description": "Marks the due dose as taken, or an upcoming dose inside the early window."
+    },
+    "skip_dose": {
+      "name": "Skip dose",
+      "description": "Marks the due dose as skipped, or an upcoming dose inside the early window."
+    },
+    "set_feeling": {
+      "name": "Set feeling",
+      "description": "Records today's check-in score.",
+      "fields": {
+        "value": { "name": "Score", "description": "From 1 (rough) to 5 (great)." }
+      }
+    },
+    "refill_ordered": {
+      "name": "Refill ordered",
+      "description": "Restarts the refill countdown from today."
+    }
+  }
+}
